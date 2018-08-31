@@ -1,5 +1,12 @@
 ## Notes
 
+### [Debugging Hostboot the Hard Way](notes/2018/09/03/debugging-hostboot.md)
+
+Hostboot's console output is pretty terse, and doubly-so when things go wrong.
+Debugging Hostboot the Hard Way gives some insight on how to extract more
+information from hostboot to root-cause problems and provide some tips on
+debugging code under development.
+
 ### [General Architecture of Hostboot](notes/2018/08/19/hostboot-architecture.md)
 
 [Hostboot](https://github.com/open-power/hostboot) is split into several parts,

@@ -106,3 +106,4 @@ here.
 Hostboot series:
 
 * [Hacking Hostboot](notes/2018/08/17/hacking-hostboot.md)
+* [Debugging Hostboot the Hard Way](notes/2018/09/03/debugging-hostboot.md)

@@ -62,3 +62,4 @@ The resulting PNOR image can then be flashed to the target machine for testing.
 Hostboot series:
 
 * [General Architecture of Hostboot](notes/2018/08/19/hostboot-architecture.md)
+* [Debugging Hostboot the Hard Way](notes/2018/09/03/debugging-hostboot.md)
