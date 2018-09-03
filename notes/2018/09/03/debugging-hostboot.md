@@ -317,5 +317,5 @@ via globals.
 
 Hostboot series:
 
-* [Hacking Hostboot](notes/2018/08/17/hacking-hostboot.md)
-* [General Architecture of Hostboot](notes/2018/08/19/hostboot-architecture.md)
+* [Hacking Hostboot](/notes/2018/08/17/hacking-hostboot.html)
+* [General Architecture of Hostboot](/notes/2018/08/19/hostboot-architecture.html)
