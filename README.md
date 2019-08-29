@@ -1,5 +1,13 @@
 ## Notes
 
+### [Testing OpenBMC kernels with QEMU](notes/2019/08/29/testing-openbmc-kernels-with-qemu.md)
+
+There are two intuitive approaches to testing OpenBMC kernels with QEMU:
+
+1. Boot the kernel of interest with `-kernel`, `-dtb` and `-initrd` options to
+   QEMU
+2. Boot a full firmware image with `-drive file=...,if=mtd,format=raw`
+
 ### [Debugging Hostboot the Hard Way](notes/2018/09/03/debugging-hostboot.md)
 
 Hostboot's console output is pretty terse, and doubly-so when things go wrong.
