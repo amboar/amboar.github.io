@@ -1,5 +1,13 @@
 ## Notes
 
+### [Bitbake and Git Submodules Done Right](notes/2019/08/30/bitbake-and-git-submodules.md)
+
+A part of OpenBMC has a use-case where we needed to build a project composed of
+multiple repositories arranged as submodules with a submodule tree depth
+greater than one. The catch is that we don't need to initialise submodules
+below the first layer, and the approach of initialising them anyway means a
+large time and bandwidth penalty downloading unnecessary information.
+
 ### [Testing OpenBMC kernels with QEMU](notes/2019/08/29/testing-openbmc-kernels-with-qemu.md)
 
 There are two intuitive approaches to testing OpenBMC kernels with QEMU:
