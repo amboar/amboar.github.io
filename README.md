@@ -1,5 +1,14 @@
 ## Notes
 
+### [Board Bringup, XYZMODEM and Terminal Servers](notes/2019/09/06/board-bringup-xyzmodem-and-terminal-servers.md)
+
+You're doing bringup of a board or SoC or have got yourself in a tight spot;
+you have no networking and are unable to write to local storage in the runtime
+environment. How do you boot a custom firmware or kernel? If you're local the
+obvious approach is to use an external tool to write the boot storage, but lets
+add to the challenge and say you're doing this remotely. You have your board
+hooked up to a terminal server, and are at the u-boot prompt.
+
 ### [Bitbake and Git Submodules Done Right](notes/2019/08/30/bitbake-and-git-submodules.md)
 
 A part of OpenBMC has a use-case where we needed to build a project composed of
