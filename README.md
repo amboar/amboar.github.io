@@ -1,5 +1,31 @@
 ## Notes
 
+### [Enabling Linux Dynamic Debug Statements when Scripting QEMU](notes/2019/12/22/enabling-dyndbg-while-scripting-qemu.md)
+
+Trying to debug intermittent data corruption under QEMU can be fairly painful,
+especially if you're trying to reproduce with stock boot images. I happened to
+be in this dark corner recently and wanted to enable some extra debug output in
+the provided kernel. Thankfully Linux supports enabling dynamic debug
+statements on the kernel commandline, though depending on which statements you
+want and how you're trying to enable them this can be a straightforward or like
+trying to run a Rube Goldberg machine in reverse.
+
+### [Debugging UBI Corruption At Boot](notes/2019/12/22/debugging-ubi-corruption-at-boot.md)
+
+Unsorted Block Images is a magic Linux kernel subsystem for handling wear
+levelling, data integrity management and dynamic partitioning of raw flash
+devices. It's magic in the sense that it does a lot of work under the covers,
+frequently shuffling data around to uphold the desirable properties of the
+subsystem.
+
+### [Abusing QEMU Device Models for Debugging](notes/2019/12/22/abusing-qemu-device-models.md)
+
+Debugging broken kernel / hypervisor interactions can be painful, and sometimes
+requires some creativity to extract the necessary information. This was the
+case recently when chasing down a bug whose most obvious symptom was squashfs
+decompression failures that appeared intermittently when booting Witherspoon
+OpenBMC firmware on QEMU's witherspoon-bmc platform model.
+
 ### [Board Bringup, XYZMODEM and Terminal Servers](notes/2019/09/06/board-bringup-xyzmodem-and-terminal-servers.md)
 
 You're doing bringup of a board or SoC or have got yourself in a tight spot;
