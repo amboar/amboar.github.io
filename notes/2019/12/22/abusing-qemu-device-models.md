@@ -12,7 +12,7 @@ corrupted. This information was to be extracted from the guest kernel in the
 ASPEED Firmware Memory Controller (FMC) SPI-NOR driver. Recording the data
 necessitated a custom kernel, but this was injected into the environment via
 the [TFTP method I've outlined
-previously](/notes/2019/08/29/testing-openbmc-kernels-with-qemu.md).
+previously](/notes/2019/08/29/testing-openbmc-kernels-with-qemu.html).
 
 The issue appeared when getting userspace up and running, and when the problem
 occurred it tended to take out the ability to interact with the runtime
