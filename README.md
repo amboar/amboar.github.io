@@ -1,5 +1,15 @@
 ## Notes
 
+### [KASAN for ARM](notes/2019/12/27/arm-kasan.md)
+
+KASAN (Kernel Address SANitizer, the kernel implementation of an [existing
+userspace aid](https://en.wikipedia.org/wiki/AddressSanitizer)) for 32-bit ARM
+is not yet in mainline Linux, but [v6 of a
+series adding support](https://lore.kernel.org/lkml/20190617221134.9930-1-f.fainelli@gmail.com/)
+was posted in mid-2019. As part of tracking down squashfs decompression errors
+in OpenBMC I took v6 for a test drive. Ultimately it didn't help my cause, but
+I had some fun debugging KASAN along the way.
+
 ### [Enabling Linux Dynamic Debug Statements when Scripting QEMU](notes/2019/12/22/enabling-dyndbg-while-scripting-qemu.md)
 
 Trying to debug intermittent data corruption under QEMU can be fairly painful,
