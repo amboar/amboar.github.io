@@ -1,5 +1,13 @@
 ## Notes
 
+### [Secure and Robust eMMC Flash Layout Design for BMCs](notes/2020/01/08/emmc-flash-layout-design-for-bmcs.md)
+
+Recently a few of us were interested in designing an eMMC flash layout that
+allowed for secure boot of a BMC's userspace while also catering to robustness
+across updates. This post covers a script I developed to road-test secure
+rootfs eMMC images under QEMU. The script appears at the end after the
+discussion of how we implement it.
+
 ### [KASAN for ARM](notes/2019/12/27/arm-kasan.md)
 
 KASAN (Kernel Address SANitizer, the kernel implementation of an [existing
