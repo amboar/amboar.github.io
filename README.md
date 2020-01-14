@@ -1,5 +1,12 @@
 ## Notes
 
+### [-sh: no such file or directory](notes/2020/01/14/sh-no-such-file-or-directory.md)
+
+OpenBMC supports several generations of BMC SoCs. In the case of ASPEED BMC
+SoCs, each generation has moved forward with the supported ISA and hardware
+features, and the ARMv7 AST2600 now sports hard-float support in the form of
+vfpv4d16.
+
 ### [Secure and Robust eMMC Flash Layout Design for BMCs](notes/2020/01/08/emmc-flash-layout-design-for-bmcs.md)
 
 Recently a few of us were interested in designing an eMMC flash layout that
