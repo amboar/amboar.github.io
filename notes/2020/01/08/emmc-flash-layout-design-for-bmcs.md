@@ -226,7 +226,7 @@ ROOT_VERITY="root,,,ro, 0 $ROOT_SECTORS verity 1 /dev/dm-0 /dev/dm-0 $BLOCK_SIZE
 fallocate -l $(align_up $(stat --format=%s $DST_IMG) $CSD_SIZE) $MMC_IMG
 dd if="$DST_IMG" of=$MMC_IMG conv=notrunc 2> /dev/null
 
-echo export SMASH_DM_MOD_CREATE=\'dm-mod.create=\"$A_LINEAR\; $ROOT_VERITY\"\'
+echo export SMASH_DM_MOD_CREATE="'dm-mod.create=\"$A_LINEAR; $ROOT_VERITY\"'"
 echo export SMASH_MMC_IMG=$MMC_IMG
 echo
 
