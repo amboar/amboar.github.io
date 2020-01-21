@@ -1,5 +1,11 @@
 ## Notes
 
+### [ddconvnotrunc: Working around limitations of busybox](notes/2020/01/21/ddconvnotrunc.md)
+
+Busybox's `dd(1)` as shipped in OpenBMC (as of Jan 21 2020) doesn't support
+`conv=notrunc`, which is a mighty handy option if you're trying to patch some
+binaries. Which I unfortunately was.
+
 ### [-sh: no such file or directory](notes/2020/01/14/sh-no-such-file-or-directory.md)
 
 OpenBMC supports several generations of BMC SoCs. In the case of ASPEED BMC
