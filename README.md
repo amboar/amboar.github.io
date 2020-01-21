@@ -1,6 +1,6 @@
 ## Notes
 
-### [ddconvnotrunc: Working around limitations of busybox](notes/2020/01/21/ddconvnotrunc.md)
+### [`dd conv=notrunc`: Working around limitations of busybox](notes/2020/01/21/ddconvnotrunc.md)
 
 Busybox's `dd(1)` as shipped in OpenBMC (as of Jan 21 2020) doesn't support
 `conv=notrunc`, which is a mighty handy option if you're trying to patch some
