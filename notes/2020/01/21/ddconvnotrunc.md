@@ -6,7 +6,7 @@ binaries. Which I unfortunately was.
 
 Many other parts of the OpenBMC busybox build are hamstrung as well. For
 instance `grep(1)`'s `-b` (`--byte-offset`) isn't supported, nor is `-a`
-(`--text`), through interestingly `-o` (`--only-matching`) _is_. `stat(1)` is
+(`--text`), though interestingly `-o` (`--only-matching`) _is_. `stat(1)` is
 also hamstrung, with no option flags supported - generally `stat --format=%s`
 is a nice and concise way to find a file's size.
 
