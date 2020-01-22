@@ -61,7 +61,7 @@ JSON output, which just gives [raw field numbers that need to be
 interpreted](https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol):
 
 ```sh
-2 11:07:14 andrew@mistburn:~/env/openbmc/openbmc/issues/SW482644$ ~/src/openbmc/openbmc-tools/amboar/obmc-scripts/dbus-pcap/dbus-pcap --json dbus_capture.pcap | head -n 3
+$ dbus-pcap --json dbus_capture.pcap | head -n 3
 [[[108, 1, 0, 1, 0, 1], [[1, "/org/freedesktop/DBus"], [3, "Hello"], [2, "org.freedesktop.DBus"], [6, "org.freedesktop.DBus"], [7, ":1.113"]]], []]
 [[[108, 2, 1, 1, 11, 4294967295], [[5, 1], [7, "org.freedesktop.DBus"], [6, ":1.113"], [8, "s"]]], [":1.113"]]
 [[[108, 4, 1, 1, 31, 4294967295], [[7, "org.freedesktop.DBus"], [1, "/org/freedesktop/DBus"], [2, "org.freedesktop.DBus"], [3, "NameOwnerChanged"], [8, "sss"]]], [":1.113", "", ""]]
