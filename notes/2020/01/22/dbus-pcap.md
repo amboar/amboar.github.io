@@ -34,7 +34,7 @@ enough control over the output.
 Here are some example invocations:
 
 ```sh
-dbus-pcap -h
+$ dbus-pcap -h
 usage: dbus-pcap [-h] [--json] [--no-track-calls]
                  file [expressions [expressions ...]]
 
