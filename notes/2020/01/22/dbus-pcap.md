@@ -1,4 +1,4 @@
-## dbus-pcap: Debugging OpenBMC with `busctl capture`
+## `dbus-pcap`: Debugging OpenBMC with `busctl capture`
 
 [@jessfraz](https://twitter.com/jessfraz) recently wrote an [ACM Queue article
 on BMCs and the availability of open-source BMC

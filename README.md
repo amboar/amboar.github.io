@@ -1,5 +1,14 @@
 ## Notes
 
+### [`dbus-pcap`: Debugging OpenBMC with `busctl capture`](notes/2020/01/22/dbus-pcap.md)
+
+[@jessfraz](https://twitter.com/jessfraz) recently wrote an [ACM Queue article
+on BMCs and the availability of open-source BMC
+firmware](https://queue.acm.org/detail.cfm?id=3378404). OpenBMC gets a mention,
+though the article also points out that it's modular design interconnected with
+D-Bus "makes the BMC software more complex to debug, audit, and put into
+production."
+
 ### [`dd conv=notrunc`: Working around limitations of busybox](notes/2020/01/21/ddconvnotrunc.md)
 
 Busybox's `dd(1)` as shipped in OpenBMC (as of Jan 21 2020) doesn't support
