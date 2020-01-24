@@ -203,7 +203,7 @@ rm -f $MMC_IMG
 
 dd if="$SRC_IMG" of="$DST_IMG" 2> /dev/null
 
-VERITY_HASH_OFFSET=$(align_up $(stat --format=%s $SRC_IMG) $SECTOR_SIZE)
+VERITY_HASH_OFFSET=$(align_up $(stat --format=%s $SRC_IMG) $BLOCK_SIZE)
 VERITY_HASH_BLOCKS=$(($VERITY_HASH_OFFSET / $BLOCK_SIZE))
 
 VERITY_ALGO=sha256
@@ -232,5 +232,5 @@ echo
 
 >&2 echo Example QEMU commandline:
 >&2 echo
->&2 echo qemu-system-arm -M ast2600-evb -m 1024 -kernel zImage -dtb aspeed-ast2600-evb.dtb -nographic -drive file=sd1.img,if=sd,format=raw -drive file=sd2.img,if=sd,format=raw -drive file=\${SMASH_MMC_IMG},if=sd,format=raw -append "console=ttyS4,1152008n earlyprintk debug \$SMASH_DM_MOD_CREATE root=/dev/dm-1"
+>&2 echo qemu-system-arm -M ast2600-evb -m 1024 -kernel zImage -dtb aspeed-ast2600-evb.dtb -nographic -drive file=sd1.img,if=sd,format=raw -drive file=sd2.img,if=sd,format=raw -drive file=\${SMASH_MMC_IMG},if=sd,format=raw -append '"console=ttyS4,1152008n earlyprintk debug $SMASH_DM_MOD_CREATE root=/dev/dm-1"'
 ```
