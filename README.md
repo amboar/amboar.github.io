@@ -1,5 +1,9 @@
 ## Notes
 
+### [History-preserving fork maintenance with git](notes/2021/09/16/history-preserving-fork-maintenance-with-git.md)
+
+Working with long-term forks in git can be painful. It doesn't have to be.
+
 ### [`dbus-pcap`: Debugging OpenBMC with `busctl capture`](notes/2020/01/22/dbus-pcap.md)
 
 [@jessfraz](https://twitter.com/jessfraz) recently wrote an [ACM Queue article
