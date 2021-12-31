@@ -1,0 +1,205 @@
+ <!DOCTYPE html>
+ <!-- SPDX-License-Identifier: GPL-2.0-or-later -->
+ <html>
+	 <head>
+		<meta charset="utf-8"/>
+		<style>
+			body {
+				background-color: #121213;
+			}
+			#trigger-container {
+				width: 12%;
+				margin: auto;
+			}
+			#suggested-container {
+				width: 20%;
+				margin: auto;
+			}
+			.candidate, .history, .suggested {
+				background-color: #3a3a3c;
+			}
+			.letter {
+				color: white;
+				text-transform: uppercase;
+				font-family: "Courier New";
+				font-weight: bold;
+				font-size: 2em;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				padding-top: 15px;
+				padding-bottom: 10px;
+				padding-left: 20px;
+				caret-color: transparent;
+			}
+			.empty, .default, .unused {
+				background-color: #3a3a3c;
+			}
+			.used {
+				background-color: #b59f3b;
+			}
+			.located {
+				background-color: #538d4e;
+			}
+		</style>
+		<script src="candidates.js"></script>
+		<script>
+			letters = "abcdefghijklmnopqrstuvwxyz"
+			eldrow = [
+				new Set(letters),
+				new Set(letters),
+				new Set(letters),
+				new Set(letters),
+				new Set(letters)
+			]
+
+			window.onload = function() {
+				sl0 = document.getElementById("suggested-letter-0")
+				sl0.contentEditable = "true"
+				sl0.focus();
+				console.log("Focussed element")
+			};
+
+			function transitionSuggestedLetterState(obj) {
+				if (obj.className.search('empty') > -1) {
+					obj.className = 'suggested letter empty'
+				} else if (obj.className.search('default') > -1) {
+					obj.className = 'suggested letter used'
+				} else if (obj.className.search('used') > -1) {
+					obj.className = 'suggested letter located'
+				} else if (obj.className.search('located') > -1) {
+					obj.className = 'suggested letter unused'
+				} else if (obj.className.search('unused') > -1) {
+					obj.className = 'suggested letter used'
+				}
+			}
+
+			function updateState() {
+				sc = document.getElementById('suggested-container')
+				sls = sc.getElementsByTagName('span')
+				seen = new Set()
+				for (i = 0; i < sls.length; i++) {
+					letter = sls[i].innerHTML.replace(/&nbsp;/g, '').toLowerCase()
+					classes = sls[i].className
+					if (classes.search(/(unused)|(default)/) > -1) {
+						if (!seen.has(letter)) {
+							for (j = 0; j < sls.length; j++) {
+								eldrow[j].delete(letter)
+							}
+						}
+					} else if (classes.search('used') > -1) {
+						eldrow[i].delete(letter)
+					} else if (classes.search('located') > -1) {
+						eldrow[i] = new Set([letter])
+					}
+					seen.add(letter)
+				}
+			}
+
+			function genPositionRegex(pos) {
+				posregex = "["
+				for (const letter of pos) {
+					posregex += letter
+				}
+				posregex += "]"
+				return posregex
+			}
+
+			function genSelectionRegex() {
+				selectregex = "^"
+				for (const pos of eldrow) {
+					selectregex += genPositionRegex(pos)
+				}
+				selectregex += "$"
+				return new RegExp(selectregex)
+			}
+
+			function selectWord() {
+				regex = genSelectionRegex()
+				for (const word of candidates) {
+					if (regex.test(word)) {
+						return word
+					}
+				}
+				console.log("Bad state!")
+				return "xxxxx"
+			}
+
+			function updateSuggested(word) {
+				sc = document.getElementById('suggested-container')
+				sls = sc.getElementsByTagName('span')
+				for (i = 0; i < sls.length; i++) {
+					sls[i].innerHTML = word[i]
+				}
+			}
+
+			function resetLetterState() {
+				sc = document.getElementById('suggested-container')
+				sls = sc.getElementsByTagName('span')
+				for (i = 0; i < sls.length; i++) {
+					if (sls[i].className.search('located') == -1) {
+						sls[i].className = 'suggested letter default'
+					}
+				}
+			}
+
+			function updateSuggestedLetter(obj, evt) {
+				code = evt.charCode || evt.keyCode
+				console.log("Saw charCode: " + code)
+				if (code >= 65 && code <= 90) { // A-Z
+					obj.className = "suggested letter default"
+					next = obj.nextElementSibling
+					if (next) {
+						obj.blur()
+						obj.contentEditable = "false"
+						next.contentEditable = "true"
+						next.focus()
+					}
+				} else if (code == 8) { // backspace
+					obj.className = "suggested letter empty"
+					obj.innerHTML = "&nbsp;"
+					prev = obj.previousElementSibling
+					if (prev) {
+						obj.blur()
+						obj.contentEditable = "false"
+						prev.contentEditable = "true"
+						prev.focus()
+					}
+				}
+			}
+
+			function trigger() {
+				updateState()
+				word = selectWord()
+				resetLetterState()
+				updateSuggested(word)
+			}
+		</script>
+	 </head>
+	 <title>Eldrow: Solve a Wordle</title>
+	 <body>
+		 <br>
+		 <div id="suggested-container">
+			<span onkeyup="updateSuggestedLetter(this, event)"
+				onclick="transitionSuggestedLetterState(this)"
+				class="suggested letter empty"
+				id="suggested-letter-0">&nbsp;</span>
+			<span onkeyup="updateSuggestedLetter(this, event)"
+				onclick="transitionSuggestedLetterState(this)"
+				class="suggested letter empty">&nbsp;</span>
+			<span onkeyup="updateSuggestedLetter(this, event)"
+				onclick="transitionSuggestedLetterState(this)"
+				class="suggested letter empty">&nbsp;</span>
+			<span onkeyup="updateSuggestedLetter(this, event)"
+				onclick="transitionSuggestedLetterState(this)"
+				class="suggested letter empty">&nbsp;</span>
+			<span onkeyup="updateSuggestedLetter(this, event)"
+				onclick="transitionSuggestedLetterState(this)"
+				class="suggested letter empty">&nbsp;</span>
+		 </div>
+		 <br>
+		 <div id="trigger-container">
+			 <button id="trigger" onclick="trigger()">Generate</button>
+		 </div>
+	 </body>
+ </html>
