@@ -15,11 +15,12 @@
 				margin: auto;
 			}
 			#suggested-container {
-				width: 321px;
+				width: 331px;
 				margin: auto;
 			}
 			.candidate, .history, .suggested {
 				background-color: #3a3a3c;
+				display: inline-block;
 			}
 			.letter {
 				color: white;
@@ -33,6 +34,7 @@
 				padding-top: 15px;
 				padding-bottom: 10px;
 				padding-left: 20px;
+				border: none;
 				caret-color: transparent;
 			}
 			.empty, .default, .unused {
@@ -55,13 +57,7 @@
 				new Set(letters),
 				new Set(letters)
 			]
-
-			window.onload = function() {
-				sl0 = document.getElementById("suggested-letter-0")
-				sl0.contentEditable = "true"
-				sl0.focus();
-				console.log("Focussed element")
-			};
+			used = new Set()
 
 			function transitionSuggestedLetterState(obj) {
 				if (obj.className.search('empty') > -1) {
@@ -79,10 +75,10 @@
 
 			function updateState() {
 				sc = document.getElementById('suggested-container')
-				sls = sc.getElementsByTagName('span')
+				sls = sc.getElementsByTagName('input')
 				seen = new Set()
 				for (i = 0; i < sls.length; i++) {
-					letter = sls[i].innerHTML.replace(/&nbsp;/g, '').toLowerCase()
+					letter = sls[i].value.replace(/&nbsp;/g, '').toLowerCase()
 					classes = sls[i].className
 					if (classes.search(/(unused)|(default)/) > -1) {
 						if (!seen.has(letter)) {
@@ -92,6 +88,7 @@
 						}
 					} else if (classes.search('used') > -1) {
 						eldrow[i].delete(letter)
+						used.add(letter)
 					} else if (classes.search('located') > -1) {
 						eldrow[i] = new Set([letter])
 					}
@@ -130,42 +127,38 @@
 
 			function updateSuggested(word) {
 				sc = document.getElementById('suggested-container')
-				sls = sc.getElementsByTagName('span')
+				sls = sc.getElementsByTagName('input')
 				for (i = 0; i < sls.length; i++) {
-					sls[i].innerHTML = word[i]
+					sls[i].value = word[i]
 				}
 			}
 
 			function resetLetterState() {
 				sc = document.getElementById('suggested-container')
-				sls = sc.getElementsByTagName('span')
+				sls = sc.getElementsByTagName('input')
 				for (i = 0; i < sls.length; i++) {
-					if (sls[i].className.search('located') == -1) {
-						sls[i].className = 'suggested letter default'
+					if (sls[i].className.search('located') > -1) {
+						continue;
+					} else if (used.has(sls[i].value)) {
+						sls[i].className = "suggested letter used";
+					} else {
+						sls[i].className = "suggested letter default";
 					}
 				}
 			}
 
-			function updateSuggestedLetter(obj, evt) {
-				code = evt.charCode || evt.keyCode
-				console.log("Saw charCode: " + code)
-				if (code >= 65 && code <= 90) { // A-Z
+			function shiftFocus(obj, evt) {
+				key = evt.charCode || evt.keyCode
+				console.log("Saw: " + key)
+				if ((key >= 65) && (key <= 90)) {
 					obj.className = "suggested letter default"
-					next = obj.nextElementSibling
-					if (next) {
-						obj.blur()
-						obj.contentEditable = "false"
-						next.contentEditable = "true"
-						next.focus()
+					if (obj.nextElementSibling) {
+						obj.nextElementSibling.focus()
 					}
-				} else if (code == 8) { // backspace
+				} else if (key == 8) {
 					obj.className = "suggested letter empty"
-					obj.innerHTML = "&nbsp;"
 					prev = obj.previousElementSibling
 					if (prev) {
-						obj.blur()
-						obj.contentEditable = "false"
-						prev.contentEditable = "true"
 						prev.focus()
 					}
 				}
@@ -174,8 +167,8 @@
 			function trigger() {
 				updateState()
 				word = selectWord()
-				resetLetterState()
 				updateSuggested(word)
+				resetLetterState()
 			}
 		</script>
 	 </head>
@@ -183,22 +176,37 @@
 	 <body>
 		 <br>
 		 <div id="suggested-container">
-			<span onkeyup="updateSuggestedLetter(this, event)"
+			<input
+				onkeyup="shiftFocus(this, event)"
 				onclick="transitionSuggestedLetterState(this)"
-				class="suggested letter empty"
-				id="suggested-letter-0">&nbsp;</span>
-			<span onkeyup="updateSuggestedLetter(this, event)"
+				maxlength=1
+				autocomplete="off"
+				autofocus="true"
+				class="suggested letter empty">
+			<input
+				onkeyup="shiftFocus(this, event)"
 				onclick="transitionSuggestedLetterState(this)"
-				class="suggested letter empty">&nbsp;</span>
-			<span onkeyup="updateSuggestedLetter(this, event)"
+				maxlength=1
+				autocomplete="off"
+				class="suggested letter empty">
+			<input
+				onkeyup="shiftFocus(this, event)"
 				onclick="transitionSuggestedLetterState(this)"
-				class="suggested letter empty">&nbsp;</span>
-			<span onkeyup="updateSuggestedLetter(this, event)"
+				maxlength=1
+				autocomplete="off"
+				class="suggested letter empty">
+			<input
+				onkeyup="shiftFocus(this, event)"
 				onclick="transitionSuggestedLetterState(this)"
-				class="suggested letter empty">&nbsp;</span>
-			<span onkeyup="updateSuggestedLetter(this, event)"
+				maxlength=1
+				autocomplete="off"
+				class="suggested letter empty">
+			<input
+				onkeyup="shiftFocus(this, event)"
 				onclick="transitionSuggestedLetterState(this)"
-				class="suggested letter empty">&nbsp;</span>
+				maxlength=1
+				autocomplete="off"
+				class="suggested letter empty">
 		 </div>
 		 <br>
 		 <div id="trigger-container">
