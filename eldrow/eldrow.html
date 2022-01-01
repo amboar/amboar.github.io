@@ -149,7 +149,6 @@
 
 			function shiftFocus(obj, evt) {
 				key = evt.charCode || evt.keyCode
-				console.log("Saw: " + key)
 				if ((key >= 65) && (key <= 90)) {
 					obj.className = "suggested letter default"
 					if (obj.nextElementSibling) {
