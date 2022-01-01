@@ -64,12 +64,12 @@
 					obj.className = 'suggested letter empty'
 				} else if (obj.className.search('default') > -1) {
 					obj.className = 'suggested letter used'
+				} else if (obj.className.search('unused') > -1) {
+					obj.className = 'suggested letter used'
 				} else if (obj.className.search('used') > -1) {
 					obj.className = 'suggested letter located'
 				} else if (obj.className.search('located') > -1) {
 					obj.className = 'suggested letter unused'
-				} else if (obj.className.search('unused') > -1) {
-					obj.className = 'suggested letter used'
 				}
 			}
 
