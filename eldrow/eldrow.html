@@ -117,7 +117,9 @@
 
 			function selectWord() {
 				regex = genSelectionRegex()
-				selected = candidates.filter(word => regex.test(word))
+				selected = candidates
+						.filter(w => regex.test(w))
+						.filter(w => [...used].every(l => w.includes(l)))
 				if (selected.length) {
 					choice = Math.floor(Math.random() * selected.length)
 					return selected[choice]
