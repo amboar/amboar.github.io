@@ -77,12 +77,19 @@
 			function updateState() {
 				sc = document.getElementById('suggested-container')
 				sls = sc.getElementsByTagName('input')
-				seen = new Set()
+				highlighted = new Set()
 				for (i = 0; i < sls.length; i++) {
-					letter = sls[i].value.replace(/&nbsp;/g, '').toLowerCase()
+					letter = sls[i].value.toLowerCase()
+					classes = sls[i].className
+					if (classes.includes('used') || classes.includes('located')) {
+						highlighted.add(letter)
+					}
+				}
+				for (i = 0; i < sls.length; i++) {
+					letter = sls[i].value.toLowerCase()
 					classes = sls[i].className
 					if (classes.search(/(unused)|(default)/) > -1) {
-						if (!seen.has(letter)) {
+						if (!highlighted.has(letter)) {
 							for (j = 0; j < sls.length; j++) {
 								eldrow[j].delete(letter)
 							}
@@ -93,7 +100,6 @@
 					} else if (classes.includes('located')) {
 						eldrow[i] = new Set([letter])
 					}
-					seen.add(letter)
 				}
 			}
 
