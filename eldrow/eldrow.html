@@ -6,6 +6,7 @@
 		<style>
 			body {
 				background-color: #121213;
+				color: #d7dadc;
 			}
 			#trigger {
 				width: 70px;
@@ -14,7 +15,7 @@
 				width: 70px;
 				margin: auto;
 			}
-			#suggested-container {
+			#help-container, #suggested-container {
 				width: 331px;
 				margin: auto;
 			}
@@ -211,5 +212,20 @@
 		 <div id="trigger-container">
 			 <button id="trigger" onclick="trigger()">Generate</button>
 		 </div>
+		 <details id="help-container">
+			 <summary>Help</summary>
+			 <ol>
+				 <li>Press <kbd>Generate</kbd> to select an initial word</li>
+				 <li>Enter the word into Wordle as the current guess</li>
+				 <li>Click the letter tiles colour them
+					<span class="unused">unused</span>,
+					<span class="used">used</span> or
+					<span class="located">located</span>
+					in accordance with Wordle's scoring of the guess</li>
+				 <li>Press <kbd>Generate</kbd> again to guess a new word based on
+					the constraints from Wordle's score for the current
+					guess</li>
+			 </ol>
+		 </details>
 	 </body>
  </html>
