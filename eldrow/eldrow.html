@@ -11,11 +11,11 @@
 			#trigger {
 				width: 70px;
 			}
-			#trigger-container {
+			#links-container, #trigger-container {
 				width: 70px;
 				margin: auto;
 			}
-			#help-container, #suggested-container {
+			#author-container, #help-container, #suggested-container {
 				width: 331px;
 				margin: auto;
 			}
@@ -61,15 +61,15 @@
 			used = new Set()
 
 			function transitionSuggestedLetterState(obj) {
-				if (obj.className.search('empty') > -1) {
+				if (obj.className.includes('empty')) {
 					obj.className = 'suggested letter empty'
-				} else if (obj.className.search('default') > -1) {
+				} else if (obj.className.includes('default')) {
 					obj.className = 'suggested letter used'
-				} else if (obj.className.search('unused') > -1) {
+				} else if (obj.className.includes('unused')) {
 					obj.className = 'suggested letter used'
-				} else if (obj.className.search('used') > -1) {
+				} else if (obj.className.includes('used')) {
 					obj.className = 'suggested letter located'
-				} else if (obj.className.search('located') > -1) {
+				} else if (obj.className.includes('located')) {
 					obj.className = 'suggested letter unused'
 				}
 			}
@@ -87,10 +87,10 @@
 								eldrow[j].delete(letter)
 							}
 						}
-					} else if (classes.search('used') > -1) {
+					} else if (classes.includes('used')) {
 						eldrow[i].delete(letter)
 						used.add(letter)
-					} else if (classes.search('located') > -1) {
+					} else if (classes.includes('located')) {
 						eldrow[i] = new Set([letter])
 					}
 					seen.add(letter)
@@ -140,7 +140,7 @@
 				sc = document.getElementById('suggested-container')
 				sls = sc.getElementsByTagName('input')
 				for (i = 0; i < sls.length; i++) {
-					if (sls[i].className.search('located') > -1) {
+					if (sls[i].className.includes('located')) {
 						continue;
 					} else if (used.has(sls[i].value)) {
 						sls[i].className = "suggested letter used";
@@ -229,5 +229,16 @@
 					guess</li>
 			 </ol>
 		 </details>
+		 <div id="author-container">
+			 <hr>
+			 <div id="links-container">
+				 <a href="https://twitter.com/mramboar">
+					 <img src="twitter.png" width=32 height=32 alt="Twitter">
+				 </a>
+				 <a href="https://github.com/amboar/eldrow">
+					 <img src="github.png" width=32 height=32 alt="Github">
+				 </a>
+			 </div>
+		 </div>
 	 </body>
  </html>
