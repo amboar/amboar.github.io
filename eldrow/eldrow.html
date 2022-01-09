@@ -60,6 +60,34 @@
 			]
 			used = new Set()
 
+			function genLetterWeights(words) {
+				weights = new Map()
+				for (const w of words) {
+					for (const l of w.split('')) {
+						if (weights.has(l)) {
+							weights.set(l, weights.get(l) + 1)
+						} else {
+							weights.set(l, 1)
+						}
+					}
+				}
+				return weights
+			}
+
+			function scoreWord(weights, word) {
+				letters = new Set(word.split(''))
+				score = [...letters].map(l => { return weights.get(l) })
+						    .reduce((t, s) => { return t + s })
+				return score
+			}
+
+			window.onload = function() {
+				w = genLetterWeights(candidates)
+				candidates.sort((l, r) => {
+					return scoreWord(w, r) - scoreWord(w, l)
+				})
+			}
+
 			function transitionSuggestedLetterState(obj) {
 				if (obj.className.includes('empty')) {
 					obj.className = 'suggested letter empty'
@@ -127,7 +155,9 @@
 						.filter(w => regex.test(w))
 						.filter(w => [...used].every(l => w.includes(l)))
 				if (selected.length) {
-					choice = Math.floor(Math.random() * selected.length)
+					// Pick one of the top 5 words for the current state
+					jitter = Math.min(selected.length, 5)
+					choice = Math.floor(Math.random() * jitter)
 					return selected[choice]
 				}
 				console.log("Bad state!")
