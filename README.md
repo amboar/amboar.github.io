@@ -1,5 +1,11 @@
 ## Notes
 
+### [My OpenBMC userspace development workflow](notes/2022/01/13/openbmc-development-workflow.md)
+
+I recently pushed a couple of tools (overlay and bbdbg) into the openbmc-tools
+repository that help me develop userspace software for OpenBMC. This post
+describes how I work with all the different tools involved.
+
 ### [History-preserving fork maintenance with git](notes/2021/09/16/history-preserving-fork-maintenance-with-git.md)
 
 Working with long-term forks in git can be painful. It doesn't have to be.

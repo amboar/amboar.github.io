@@ -58,19 +58,26 @@ care about in the general case.
 The `overlay` script lives [here][1] and should just be copied onto the target
 using `scp`.
 
-### Deploy the modified application to the target
+### From the development machine, deploy the modified application to the target
 16. `devtool deploy-target --no-host-check --show-status --no-check-space --strip dbus-sensors`
 
 Note this may require [a rather hacky patch to devtool][5]
 
-### Test the modified application and discover issues
+### On the target machine, test the modified application and discover issues
 17. Test `/usr/bin/nvmesensor`
 18. `/usr/bin/nvmesensor` generates a core-dump
 
-### Extract the application core dump
+### On the target machine, extract the application core dump
 19. `coredumpctl dump $PID -o /tmp/core`
 
-### Analyse the core dump on my development machine
+### On the development machine, prepare the bitbake environment for core analysis
+20. `bitbake obmc-phosphor-image`
+
+This is necessary to regenerate the package index and the packages we want to
+install below through the `bbdbg` invocation. We don't have to do anything with
+the generated images. It's unfortunate but I'm not aware of a way to avoid it.
+
+### On the development machine, analyse the core dump
 20. `scp $BMC:/tmp/core .`
 21. `bbdbg ~/src/openbmc/openbmc/build/p10bmc /usr/bin/nvmesensor core dbus-sensors dbus-sensors-dbg`
 
@@ -84,7 +91,7 @@ If we return to the step 16 where we're testing `nvmesensor` on the target, we
 can also do interactive debug rather than core debug if we use `gdbserver` on
 the target.
 
-### On the target, attach `gdbserver` to a running application
+### On the target machine, attach `gdbserver` to a running application
 22. `gdbserver --attach localhost:1234 $PID`
 
 Note that `gdbserver` typically ignores the `host` portion of `host:port`, so we
