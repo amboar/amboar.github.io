@@ -71,11 +71,10 @@ Note this may require [a rather hacky patch to devtool][5]
 19. `coredumpctl dump $PID -o /tmp/core`
 
 ### On the development machine, prepare the bitbake environment for core analysis
-20. `bitbake obmc-phosphor-image`
+20. `bitbake -c do_package_write_ipk dbus-sensors`
 
-This is necessary to regenerate the package index and the packages we want to
-install below through the `bbdbg` invocation. We don't have to do anything with
-the generated images. It's unfortunate but I'm not aware of a way to avoid it.
+`devtool build` doesn't run the step of packaging up the application for `opkg`
+to deploy, so we have to explicitly invoke this step.
 
 ### On the development machine, analyse the core dump
 20. `scp $BMC:/tmp/core .`
