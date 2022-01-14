@@ -71,14 +71,15 @@ Note this may require [a rather hacky patch to devtool][5]
 19. `coredumpctl dump $PID -o /tmp/core`
 
 ### On the development machine, prepare the bitbake environment for core analysis
-20. `bitbake -c do_package_write_ipk dbus-sensors`
+21. `bitbake -c do_rootfs obmc-phosphor-image`
 
 `devtool build` doesn't run the step of packaging up the application for `opkg`
-to deploy, so we have to explicitly invoke this step.
+to deploy and updating the package index, so we have to explicitly invoke this
+step ourselves.
 
 ### On the development machine, analyse the core dump
-20. `scp $BMC:/tmp/core .`
-21. `bbdbg ~/src/openbmc/openbmc/build/p10bmc /usr/bin/nvmesensor core dbus-sensors dbus-sensors-dbg`
+22. `scp $BMC:/tmp/core .`
+23. `bbdbg ~/src/openbmc/openbmc/build/p10bmc /usr/bin/nvmesensor core dbus-sensors dbus-sensors-dbg`
 
 Using [`bbdbg`][2] we create ourselves a `gdb` session where we can perform
 sensible analysis of the `nvmesensor` core with all the necessary symbols loaded
