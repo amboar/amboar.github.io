@@ -1,5 +1,11 @@
 ## Notes
 
+### [An `opkg`-based OpenBMC development workflow](notes/2022/05/13/opkg-based-development-workflow.md)
+
+Previously I talked about the mechanics of how I develop bits and pieces of
+userspace for OpenBMC. What I will discuss this time is an alternative
+flow that replaces the use of `devtool deploy-target` with `opkg`.
+
 ### [My OpenBMC userspace development workflow](notes/2022/01/13/openbmc-development-workflow.md)
 
 I recently pushed a couple of tools (overlay and bbdbg) into the openbmc-tools
