@@ -175,8 +175,21 @@ some packages!
 By default `opkg` looks for its configuration at `/etc/opkg.conf`. We placed
 ours at `~/opkg.conf` in our target environment, so all our `opkg` invocations
 need to account for that. `opkg` is told where its configuration lives using the
-`-f` or `--conf` option. With that we can prime the package metadata and install
-something.
+`-f` or `--conf` option.
+
+With that we can prime the package metadata and install something.
+
+At least, almost. As a once-off before we begin installing things we need to
+clean up some breakage from the `base-files` package, which [removes `/var/lock`
+in its preinstall script][7]:
+
+```
+# opkg -f opkg.conf update &&
+> opkg -f opkg.conf install --force-overwrite base-files &&
+> systemd-tmpfiles --create --exclude-prefix=/dev
+```
+
+With that fixed up, to iterate on our package we use:
 
 ```
 # opkg -f ~/opkg.conf update &&
@@ -243,3 +256,4 @@ package name!
 [4]: https://github.com/openbmc/openbmc/commit/605c37cb989a95c02633fcb93efb45102781b4bb
 [5]: https://docs.python.org/3/library/http.server.html
 [6]: https://github.com/openbmc/openbmc-tools/blob/master/overlay/overlay
+[7]: https://git.yoctoproject.org/poky/tree/meta/recipes-core/base-files/base-files_3.0.14.bb?h=yocto-3.4.4#n72
