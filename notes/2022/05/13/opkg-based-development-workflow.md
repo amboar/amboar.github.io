@@ -109,6 +109,8 @@ must be replaced with the address of your build machine, which must also be
 reachable from the BMC:
 
 ```sh
+$ bitbake package-index
+...
 $ gen_opkg_conf http://192.168.0.10:8000 .
 arch all 1
 arch armv7ahf-vfpv4d16 6
@@ -120,11 +122,12 @@ src/gz foo http://192.168.0.10:8000/foo
 src/gz x86_64-nativesdk http://192.168.0.10:8000/x86_64-nativesdk
 ```
 
-Paste the output into a file in the target environment. In this example we'll
-use the path `~/opkg.conf`.
+The [`bitbake package-index` command][8] is necessary to ensure the package
+archive is in a usable state before we parse the data with `gen_opkg_conf`.
 
-At this point `opkg` is ready to go, save for some minor details like read-only
-root filesystems.
+Paste the output from `gen_opkg_conf ...` into a file in the target environment.
+In this example we'll use the path `~/opkg.conf`. At this point `opkg` is ready
+to go, save for some minor details like read-only root filesystems.
 
 ### Preparing the root filesystem
 
@@ -257,3 +260,4 @@ package name!
 [5]: https://docs.python.org/3/library/http.server.html
 [6]: https://github.com/openbmc/openbmc-tools/blob/master/overlay/overlay
 [7]: https://git.yoctoproject.org/poky/tree/meta/recipes-core/base-files/base-files_3.0.14.bb?h=yocto-3.4.4#n72
+[8]: https://docs.yoctoproject.org/ref-manual/tasks.html#do-package-index
