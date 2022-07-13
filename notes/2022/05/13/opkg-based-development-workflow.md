@@ -187,8 +187,8 @@ clean up some breakage from the `base-files` package, which [removes `/var/lock`
 in its preinstall script][7]:
 
 ```
-# opkg -f opkg.conf update &&
-> opkg -f opkg.conf install --force-overwrite base-files &&
+# opkg -f ~/opkg.conf update &&
+> opkg -f ~/opkg.conf install --force-overwrite base-files &&
 > systemd-tmpfiles --create --exclude-prefix=/dev
 ```
 
@@ -219,8 +219,8 @@ packages.
 To figure out why `nvmesensor` is crashing, we can:
 
 ```
-# opkg -f install gdb gcc-runtime-dbg
-# opkg -f install --volatile-cache --force-reinstall dbus-sensors-dbg
+# opkg -f ~/opkg.conf install gdb gcc-runtime-dbg
+# opkg -f ~/opkg.conf install --volatile-cache --force-reinstall dbus-sensors-dbg
 # gdb -q nvmesensor
 ...
 ```
