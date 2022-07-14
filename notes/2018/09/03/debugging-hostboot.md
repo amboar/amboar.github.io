@@ -255,7 +255,7 @@ index f6be30fef231..6f7e2125d6ee 100644
  #define TRAC_INIT(des, name, sz, type...) \
                  TRAC_INIT_LINE(des, name, sz, __LINE__, ## type)
  
-+extern bool traceConsoleOutput;
++extern volatile bool traceConsoleOutput;
 +
  namespace TRACE
  {
@@ -268,7 +268,7 @@ index 260f71e2b4f9..87836787499f 100644
  #include <util/sprintf.H>
  #include <debugpointers.H>
  
-+bool traceConsoleOutput = false;
++volatile bool traceConsoleOutput = false;
  
  namespace TRACE
  {
@@ -297,7 +297,6 @@ index c5a650a10346..0ce865ed6613 100644
  void* call_host_start_payload (void *io_pArgs)
  {
 +    traceConsoleOutput = true;
-+    lwsync();
      errlHndl_t  l_errl  =   nullptr;
  
      IStepError l_StepError;
