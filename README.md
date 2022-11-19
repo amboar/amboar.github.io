@@ -130,3 +130,6 @@ this environment is always challenging, but the nature of its implementation
 also adds to the level of difficulty.
 
 ---
+
+<a rel="me" href="https://social.tchncs.de/@arj">Mastodon</a>
+<a rel="me" href="https://twitter.com/mramboar">Twitter</a>
