@@ -1,5 +1,10 @@
 ## Notes
 
+### [OpenBMC development on a Apple M1 Ultra](notes/2023/03/27/openbmc-development-on-an-m1-ultra.md)
+
+I've had an M1 Ultra lying beside me for some time now, waiting for me to
+find a good workflow and migrate onto it.
+
 ### [An `opkg`-based OpenBMC development workflow](notes/2022/05/13/opkg-based-development-workflow.md)
 
 Previously I talked about the mechanics of how I develop bits and pieces of
