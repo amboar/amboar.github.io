@@ -1,5 +1,13 @@
 ## Notes
 
+### [Motivating a New Scheme for PLDM Instance ID Management in OpenBMC](notes/2023/03/28/motivating-a-new-scheme-for-pldm-instance-id-management-in-openbmc.md)
+
+Recently Rashmica has been doing some work to enable use of Linux's `AF_MCTP`
+sockets in OpenBMC. Until now we've relied on a userspace implementation of MCTP
+through libmctp, but this rapidly hit limitations at the kernel/userspace
+interface boundary. To fix that, Code Construct did the work to move MCTP into
+the kernel.
+
 ### [OpenBMC development on a Apple M1 Ultra](notes/2023/03/27/openbmc-development-on-an-m1-ultra.md)
 
 I've had an M1 Ultra lying beside me for some time now, waiting for me to
