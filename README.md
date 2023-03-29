@@ -1,5 +1,12 @@
 ## Notes
 
+### [A Global PLDM Instance ID Allocator in Userspace for `libpldm`](notes/2023/03/29/a-global-pldm-instance-id-allocator-for-libpldm.md)
+
+In Motivating a New Scheme for PLDM Instance ID Management in
+OpenBMC I talked about why we need to change how instance IDs are managed in
+OpenBMC. Underpinning it is the shift to using `AF_MCTP` sockets provided by
+Linux.
+
 ### [Motivating a New Scheme for PLDM Instance ID Management in OpenBMC](notes/2023/03/28/motivating-a-new-scheme-for-pldm-instance-id-management-in-openbmc.md)
 
 Recently Rashmica has been doing some work to enable use of Linux's `AF_MCTP`
