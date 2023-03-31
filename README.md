@@ -1,5 +1,13 @@
 ## Notes
 
+### [Exploiting `obmc-console` service units to expose multiple host consoles to the BMC network](notes/2023/03/31/exploiting-obmc-console-service-units-for-multiple-host-consoles.md)
+
+`obmc-console` provides the plumbing to expose one or more host consoles onto
+BMC's network interfaces. It comes in two parts:
+
+1. `obmc-console-server`
+2. `obmc-console-client`
+
 ### [A Global PLDM Instance ID Allocator in Userspace for `libpldm`](notes/2023/03/29/a-global-pldm-instance-id-allocator-for-libpldm.md)
 
 In Motivating a New Scheme for PLDM Instance ID Management in
