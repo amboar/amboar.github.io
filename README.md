@@ -1,5 +1,11 @@
 ## Notes
 
+### [`touch-required` FIDO2 Authentication with `sshd` and a Yubikey on Fedora 38](notes/2023/05/01/sshd-fido2-touch-required.md)
+
+Because I'm lazy the network contains printers and other devices whose
+firmware hygiene generally causes infosec side-eye. Leaving `sshd` exposed to
+password-based authentication attempts didn't evoke feelings of comfort.
+
 ### [Exploiting `obmc-console` service units to expose multiple host consoles to the BMC network](notes/2023/03/31/exploiting-obmc-console-service-units-for-multiple-host-consoles.md)
 
 `obmc-console` provides the plumbing to expose one or more host consoles onto
