@@ -1,5 +1,11 @@
 ## Notes
 
+### [Testing `obmc-console` with `socat`](notes/2023/05/02/testing-obmc-console-with-socat.md)
+
+This is a bit of a gross hack. However, it serves to demonstrate a way to test
+the `obmc-console` stack without requiring integration into a BMC and booting
+its host (or some equally tedious arrangement).
+
 ### [`touch-required` FIDO2 Authentication with `sshd` and a Yubikey on Fedora 38](notes/2023/05/01/sshd-fido2-touch-required.md)
 
 Because I'm lazy the network contains printers and other devices whose
