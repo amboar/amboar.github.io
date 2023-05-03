@@ -1,5 +1,14 @@
 ## Notes
 
+### [Fixing Formatting CI Failures in OpenBMC Projects](notes/2023/05/03/fixing-formatting-CI-failures-in-openbmc.md)
+
+Pushing patches for review to `gerrit.openbmc.org` automatically triggers CI
+jobs on `jenkins.openbmc.org`. Almost always this triggers builds and a bunch of
+linters to run over the change. Many of the linters are also formatters, such as
+`prettier`, `black` or clang-format`.
+
+As it stands any differences introduced by the linters causes a build failure.
+
 ### [Testing `obmc-console` with `socat`](notes/2023/05/02/testing-obmc-console-with-socat.md)
 
 This is a bit of a gross hack. However, it serves to demonstrate a way to test
