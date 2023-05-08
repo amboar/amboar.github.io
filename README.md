@@ -1,5 +1,12 @@
 ## Notes
 
+### [Happenings in `obmc-console`](notes/2023/05/08/happenings-in-obmc-console.md)
+
+`obmc-console` is quite a slow-paced project relative to others in the OpenBMC
+ecosystem, but recently I've merged quite a few changes. The bad news is not
+all of them have have kept things in working order in the OpenBMC distro, so
+let's look at what's happened, what's broken, and what we need to do to fix it.
+
 ### [Fixing Formatting CI Failures in OpenBMC Projects](notes/2023/05/03/fixing-formatting-CI-failures-in-openbmc.md)
 
 Pushing patches for review to `gerrit.openbmc.org` automatically triggers CI
