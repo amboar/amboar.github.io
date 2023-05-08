@@ -1,5 +1,12 @@
 ## Notes
 
+### [Host Console Access using Aspeed BMC SoCs](notes/2023/05/09/host-console-access-using-aspeed-bmc-socs.md)
+
+Experience suggests that configuring an Aspeed BMC for host console access can
+be a confusing task. The UART capabilities provided by the SoCs allow access to
+the host console both via physical connectors on the rear of the chassis and
+also via Serial-over-LAN (SOL).
+
 ### [Happenings in `obmc-console`](notes/2023/05/08/happenings-in-obmc-console.md)
 
 `obmc-console` is quite a slow-paced project relative to others in the OpenBMC
