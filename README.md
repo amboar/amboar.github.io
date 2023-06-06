@@ -1,5 +1,15 @@
 ## Notes
 
+### [Deprecated, Stable and Testing ABIs for `libpldm`](notes/2023/06/06/deprecated-stable-and-testing-abis-for-libpldm.md)
+
+Developing and maintaining libraries is a very different ballgame to
+applications. Internal functions of an application tend to have a closed set of
+call-sites. Under these conditions refactoring is often straight-forward: Rework
+your internal APIs and then clean up the resulting compiler errors. By contrast
+libraries rarely have a closed set of call-sites for their APIs. This means
+breaking an API impacts a potentially unknowable number of applications, and
+makes for a bad experience for the library's users when they try to update.
+
 ### [Host Console Access using Aspeed BMC SoCs](notes/2023/05/09/host-console-access-using-aspeed-bmc-socs.md)
 
 Experience suggests that configuring an Aspeed BMC for host console access can
