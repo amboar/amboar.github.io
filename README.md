@@ -1,5 +1,14 @@
 ## Notes
 
+### [Inspecting Boot Performance in OpenBMC](notes/2023/06/08/inspecting-boot-performance-in-openbmc.md)
+
+OpenBMC uses systemd as a system management daemon. While this raises some
+eyebrows given the environment, it's what we have. At least it provides
+reliability and familiarity as we disregard the perceived complexity. With
+systemd comes an opportunity to use `systemd-bootchart` for measuring boot-time
+behaviour of the system. While it's relatively easy to use in general, some of
+the details of the OpenBMC boot process can get in the road.
+
 ### [Deprecated, Stable and Testing ABIs for `libpldm`](notes/2023/06/06/deprecated-stable-and-testing-abis-for-libpldm.md)
 
 Developing and maintaining libraries is a very different ballgame to
