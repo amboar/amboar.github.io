@@ -1,5 +1,15 @@
 ## Notes
 
+### [Naming Functions in C](notes/2023/06/09/naming-functions-in-c.md)
+
+To steal from wikipedia, C is an imperative procedural language. Given the
+language's lack of formal support for more abstract constructs like
+object-oriented classes, it's easy to reach the view that its ecosystem is a
+grab-bag of loosely related functions. Developing applications and libraries
+with this perspective can lead to choices that feel kind of arbitrary. We need
+to be conscious that what we're doing is imposing a structure on the code in
+order to organise our own thoughts and those of others.
+
 ### [Inspecting Boot Performance in OpenBMC](notes/2023/06/08/inspecting-boot-performance-in-openbmc.md)
 
 OpenBMC uses systemd as a system management daemon. While this raises some
