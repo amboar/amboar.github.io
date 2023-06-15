@@ -1,5 +1,12 @@
 ## Notes
 
+### [A Cross-Architecture Userspace Workflow on Fedora 38](notes/2023/06/15/cross-architecture-userspace-workflow-on-fedora-38.md)
+
+These days I'm using Fedora on an `aarch64` system but still have a need for
+cross-compiling bits and pieces to `x86_64` and other architectures.
+Unfortunately, Fedora doesn't provide a cross toolchain capable of building
+userspace binaries. So, is there a relatively straight-forward work-around?
+
 ### [Naming Functions in C](notes/2023/06/09/naming-functions-in-c.md)
 
 To steal from wikipedia, C is an imperative procedural language. Given the
