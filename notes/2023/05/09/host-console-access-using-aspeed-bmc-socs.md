@@ -1,5 +1,7 @@
 # Host Console Access using Aspeed BMC SoCs
 
+(Updated 2023-06-15: Added the ASCII art diagram)
+
 Experience suggests that configuring an Aspeed BMC for host console access can
 be a confusing task. The UART capabilities provided by the SoCs allow access to
 the host console both via physical connectors on the rear of the chassis and
@@ -101,6 +103,42 @@ pairs in order to maintain the contract of standard UART behaviour.
 This leads to the question of how to pair them together, and the answer to that
 is the UART mux. But before we consider the UART mux, we need to tease appart
 the concept of a UART and its associated physical IO connector.
+
+## The SUART Perspective
+
+```
+            AHB                           LPC
+
+             │                             │
+             ├─────────────────┐   ┌───────┤
+             │                 │   │       │
+             ├───────┐   ┌─────┼───┼───────┤
+             │       │   │     │   │       │
+             │     ┌─▼───▼─┐ ┌─▼───▼─┐     │
+             │     │       │ │       │     │
+             │     │ SUART │ │ SUART │     │
+             │     │       │ │       │     │
+             │     └───▲───┘ └───▲───┘     │
+             │         │         │         │
+             │         │         │         │
+             │      ┌──▼─────────▼───┐     │
+             │      │                │     │
+             ├──────►      MUX       │     │
+             │      │                │     │
+             │      └──▲─────────▲───┘     │
+             │         │         │         │
+                       │         │
+                    ┌──▼───┐ ┌───▼──┐
+                    │      │ │      │
+                    │  IO  │ │  IO  │
+                    │      │ │      │
+                    └──▲───┘ └───▲──┘
+                       │         │
+                       │         │
+                 ──────▼─────────▼─────
+                         Chassis
+                        Backplate
+```
 
 ## SUARTs and Physical IOs
 
