@@ -1,5 +1,13 @@
 ## Notes
 
+### [Representations and Design Boundaries with Endianness](notes/2023/06/19/representations-and-design-boundaries-with-endianness.md)
+
+The nuts and bolts of endianness are a bit fiddly. Keeping value endianness in
+mind when reading through memory dumps is annoying but not intractable. In my
+mind, a more important concern is deciding where to address endianness in a
+system design. The answer to that is very likely "at the boundaries", but this
+also requires knowing where the boundaries are in a system design.
+
 ### [A Cross-Architecture Userspace Workflow on Fedora 38](notes/2023/06/15/cross-architecture-userspace-workflow-on-fedora-38.md)
 
 These days I'm using Fedora on an `aarch64` system but still have a need for
