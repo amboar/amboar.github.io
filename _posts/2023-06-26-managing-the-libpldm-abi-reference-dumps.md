@@ -59,7 +59,7 @@ reference dump for the build.
 
 [libpldm-build-abi-dump-location]: https://github.com/openbmc/libpldm/blob/291da1952b7459b890b2de742774e9dfc1b28cec/meson.build#L106-L116
 
-A corrolary of this is that the reference dumps can be updated by copying a
+A corollary of this is that the reference dumps can be updated by copying a
 build's `current.dump` into the appropriate location under the `abi/` directory.
 Needless to say, the build's host architecture (again, with respect to [^1]) and
 compiler suite need to be taken into account. If you are unsure, these details
@@ -129,6 +129,6 @@ forward. It is thus criticial that it be integrated into the reference dumps so
 this promise can be upheld by CI.
 
 Finally, once a function is deleted there's no need to continue carrying its
-description in the referece dumps.
+description in the reference dumps.
 
 And with that, hopefully the lifecycle of the reference dumps is now clear!
