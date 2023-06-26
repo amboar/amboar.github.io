@@ -1,8 +1,7 @@
 ---
+title: History-preserving fork maintenance with git
 author: Andrew
 ---
-
-## History-preserving fork maintenance with git
 
 Working with long-term forks in git can be painful. A fundamental choice exists
 around which strategy should be used to manage downstream-only patches:

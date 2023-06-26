@@ -1,8 +1,7 @@
 ---
+title: My OpenBMC userspace development workflow
 author: Andrew
 ---
-
-## My OpenBMC userspace development workflow
 
 I recently pushed a couple of tools ([overlay][1] and [bbdbg][2]) into the
 [openbmc-tools][3] repository that help me develop userspace software for

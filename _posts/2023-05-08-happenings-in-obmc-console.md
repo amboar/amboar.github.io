@@ -1,8 +1,7 @@
 ---
+title: Happenings in obmc-console
 author: Andrew
 ---
-
-# Happenings in `obmc-console`
 
 [obmc-console][] is quite a slow-paced project relative to others in the OpenBMC
 ecosystem, but recently I've merged quite a few changes. The bad news is not

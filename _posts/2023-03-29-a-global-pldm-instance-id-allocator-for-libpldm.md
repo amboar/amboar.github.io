@@ -1,8 +1,7 @@
 ---
+title: A Global PLDM Instance ID Allocator in Userspace for libpldm
 author: Andrew
 ---
-
-# A Global PLDM Instance ID Allocator in Userspace for `libpldm`
 
 In [Motivating a New Scheme for PLDM Instance ID Management in
 OpenBMC][amboar-notes-motivating-a-new-scheme] I talked about why we need to

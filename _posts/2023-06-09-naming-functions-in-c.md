@@ -1,8 +1,7 @@
 ---
+title: Naming Functions in C
 author: Andrew
 ---
-
-## Naming Functions in C
 
 To steal from wikipedia, [C is an imperative procedural
 language][wikipedia-c-lang]. Given the language's lack of formal support for

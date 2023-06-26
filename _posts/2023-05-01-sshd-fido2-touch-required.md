@@ -1,8 +1,7 @@
 ---
+title: touch-required FIDO2 Authentication with sshd and a Yubikey on Fedora 38
 author: Andrew
 ---
-
-# `touch-required` FIDO2 Authentication with `sshd` and a Yubikey on Fedora 38
 
 In [OpenBMC Development on an Apple M1 Ultra][workflow] I outlined setting up a
 Fedora VM that met a bunch of my workflow requirements for developing OpenBMC.

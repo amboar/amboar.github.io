@@ -1,8 +1,7 @@
 ---
+title: Inspecting Boot Performance in OpenBMC
 author: Andrew
 ---
-
-# Inspecting Boot Performance in OpenBMC
 
 OpenBMC uses [systemd][] as a system management daemon. While this raises some
 eyebrows given the environment, it's what we have. At least it provides

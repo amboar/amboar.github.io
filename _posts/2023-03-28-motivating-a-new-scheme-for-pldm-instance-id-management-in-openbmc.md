@@ -1,8 +1,7 @@
 ---
+title: Motivating a New Scheme for PLDM Instance ID Management in OpenBMC
 author: Andrew
 ---
-
-# Motivating a New Scheme for PLDM Instance ID Management in OpenBMC
 
 Recently [Rashmica][sthbrx-rashmica] has been doing some work to enable use of
 [Linux's `AF_MCTP` sockets][linux-doc-af-mctp] in OpenBMC. Until now we've

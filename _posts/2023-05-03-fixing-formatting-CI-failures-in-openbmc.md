@@ -1,8 +1,7 @@
 ---
+title: Fixing Formatting CI Failures in OpenBMC Projects
 author: Andrew
 ---
-
-# Fixing Formatting CI Failures in OpenBMC Projects
 
 Pushing patches for review to `gerrit.openbmc.org` automatically triggers CI
 jobs on `jenkins.openbmc.org`. Almost always this triggers builds and a bunch of

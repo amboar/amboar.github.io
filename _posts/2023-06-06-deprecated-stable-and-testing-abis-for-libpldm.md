@@ -1,8 +1,7 @@
 ---
+title: Deprecated, Stable and Testing ABIs for libpldm
 author: Andrew
 ---
-
-## Deprecated, Stable and Testing ABIs for `libpldm`
 
 Developing and maintaining libraries is a very different ballgame to
 applications. Internal functions of an application tend to have a closed set of

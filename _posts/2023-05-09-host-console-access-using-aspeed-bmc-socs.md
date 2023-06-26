@@ -1,8 +1,7 @@
 ---
+title: Host Console Access using Aspeed BMC SoCs
 author: Andrew
 ---
-
-# Host Console Access using Aspeed BMC SoCs
 
 (Updated 2023-06-15: Added the ASCII art diagram)
 

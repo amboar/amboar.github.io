@@ -1,10 +1,7 @@
 ---
+title: Hacking Hostboot
 author: Andrew
 ---
-
-## Hacking Hostboot
-
-2018-08-17
 
 [Hostboot](https://github.com/open-power/hostboot) is one part of the firmware
 stack that initialises an OpenPOWER system - it is the first piece of software

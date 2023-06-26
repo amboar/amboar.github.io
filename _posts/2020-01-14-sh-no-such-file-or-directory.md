@@ -1,8 +1,7 @@
 ---
+title: '-sh: no such file or directory'
 author: Andrew
 ---
-
-## -sh: no such file or directory
 
 ```
 root@bmc:~# /usr/local/bin/phosphor-psu-monitor -c /usr/local/share/phosphor-psu-monitor/bmc_psu_config.json

@@ -1,8 +1,7 @@
 ---
+title: OpenBMC Development on an Apple M1 Ultra
 author: Andrew
 ---
-
-# OpenBMC Development on an Apple M1 Ultra
 
 I've had an M1 Ultra lying beside me for some time now, waiting for me to
 find a good workflow and migrate onto it.

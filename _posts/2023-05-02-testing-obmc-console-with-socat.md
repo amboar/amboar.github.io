@@ -1,8 +1,7 @@
 ---
+title: Testing obmc-console with socat
 author: Andrew
 ---
-
-# Testing `obmc-console` with `socat`
 
 This is a bit of a gross hack. However, it serves to demonstrate a way to test
 [the `obmc-console` stack][obmc-console] without requiring integration into a

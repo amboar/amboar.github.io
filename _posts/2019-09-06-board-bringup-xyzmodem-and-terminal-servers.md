@@ -1,8 +1,7 @@
 ---
+title: Board Bringup, [XYZ]MODEM and Terminal Servers
 author: Andrew
 ---
-
-## Board Bringup, [XYZ]MODEM and Terminal Servers
 
 You're doing bringup of a board or SoC or have got yourself in a tight spot;
 you have no networking and are unable to write to local storage in the runtime

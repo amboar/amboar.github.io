@@ -1,8 +1,7 @@
 ---
+title: Debugging Hostboot The Hard Way
 author: Andrew
 ---
-
-## Debugging Hostboot The Hard Way
 
 Maybe you've seen Hostboot dump out something like the following on the console:
 

@@ -1,8 +1,7 @@
 ---
+title: Testing OpenBMC kernels with QEMU
 author: Andrew
 ---
-
-## Testing OpenBMC kernels with QEMU
 
 There are two intuitive approaches to testing OpenBMC kernels with QEMU:
 

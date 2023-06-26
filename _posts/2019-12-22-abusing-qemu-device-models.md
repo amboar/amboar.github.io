@@ -1,8 +1,7 @@
 ---
+title: Abusing QEMU Device Models for Debugging
 author: Andrew
 ---
-
-## Abusing QEMU Device Models for Debugging
 
 Debugging broken kernel / hypervisor interactions can be painful, and sometimes
 requires some creativity to extract the necessary information. This was the

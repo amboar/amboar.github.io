@@ -1,8 +1,7 @@
 ---
+title: An opkg-based OpenBMC development workflow
 author: Andrew
 ---
-
-## An `opkg`-based OpenBMC development workflow
 
 Previously [I talked about the mechanics of how I develop bits and pieces of
 userspace for OpenBMC][1]. What I will discuss this time is an alternative

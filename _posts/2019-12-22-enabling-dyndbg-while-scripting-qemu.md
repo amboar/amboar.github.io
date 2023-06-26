@@ -1,8 +1,7 @@
 ---
+title: Enabling Linux Dynamic Debug Statements when Scripting QEMU
 author: Andrew
 ---
-
-## Enabling Linux Dynamic Debug Statements when Scripting QEMU
 
 Trying to debug intermittent data corruption under QEMU can be fairly painful,
 especially if you're trying to reproduce with stock boot images. I happened to

@@ -1,10 +1,7 @@
 ---
+title: General Architecture of Hostboot
 author: Andrew
 ---
-
-## General Architecture of Hostboot
-
-2018-08-19
 
 [Hostboot](https://github.com/open-power/hostboot) is split into several parts,
 in terms of the artefacts generated and their roles.

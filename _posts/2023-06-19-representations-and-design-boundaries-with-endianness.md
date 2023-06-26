@@ -1,8 +1,7 @@
 ---
+title: Representations and Design Boundaries with Endianness
 author: Andrew
 ---
-
-## Representations and Design Boundaries with Endianness
 
 The nuts and bolts of [endianness][wikipedia-endianness] are a bit fiddly.
 Keeping value endianness in mind when reading through memory dumps is annoying

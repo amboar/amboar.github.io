@@ -1,8 +1,7 @@
 ---
+title: Secure and Robust eMMC Flash Layout Design for BMCs
 author: Andrew
 ---
-
-## Secure and Robust eMMC Flash Layout Design for BMCs
 
 Recently a few of us were interested in designing an eMMC flash layout that
 allowed for secure boot of a BMC's userspace while also catering to robustness

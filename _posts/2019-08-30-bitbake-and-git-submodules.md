@@ -1,8 +1,7 @@
 ---
+title: Bitbake and Git Submodules Done Right
 author: Andrew
 ---
-
-## Bitbake and Git Submodules Done Right
 
 A part of OpenBMC has a use-case where we needed to build a project composed of
 multiple repositories arranged as submodules with a submodule tree depth

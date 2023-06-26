@@ -1,8 +1,7 @@
 ---
+title: Debugging UBI Corruption At Boot
 author: Andrew
 ---
-
-## Debugging UBI Corruption At Boot
 
 Unsorted Block Images is a magic Linux kernel subsystem for handling wear
 levelling, data integrity management and dynamic partitioning of raw flash
