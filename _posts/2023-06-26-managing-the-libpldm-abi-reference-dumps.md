@@ -51,11 +51,16 @@ architecture of my current laptop. The `x86_64` reference dump is captured
 because the architecture is reasonably popular, but crucially, the dominant
 architecture used by the project's CI.
 
-Setting the reference dumps aside, each build also generates its own ABI dump.
-These per-build dumps are currently [written out as `current.dump` in the root
-of the build directory][libpldm-build-abi-dump-location]. The role of
+Setting the reference dumps aside, each build also generates its own ABI dump if
+the `abi-dumper` and `abi-compliance-checker` tools are found[^5]. These
+per-build dumps are currently [written out as `current.dump` in the root of the
+build directory][libpldm-build-abi-dump-location]. The role of
 `abi-compliance-checker` is to test `current.dump` against the appropriate
 reference dump for the build.
+
+[^5]: Under Linux they can both be installed through the system's package
+    manager, e.g. with `sudo dnf install abi-dumper abi-compliance-checker` or
+    `sudo apt install abi-dumper abi-compliance-checker`.
 
 [libpldm-build-abi-dump-location]: https://github.com/openbmc/libpldm/blob/291da1952b7459b890b2de742774e9dfc1b28cec/meson.build#L106-L116
 
