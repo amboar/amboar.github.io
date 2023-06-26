@@ -1,5 +1,13 @@
 ## Notes
 
+### [Managing the `libpldm` ABI Reference Dumps](_posts/2023-06-26-managing-the-libpldm-abi-reference-dumps.md)
+
+The existence of `libpldm`'s `stable` visibility class implies that we shouldn't
+break the existence or behaviour any of its functions. This promise is only as
+good as our ability to measure it. The ideal measurement is that any stable API
+and ABI breaks are detected by Continuous Integration (CI). To that end I
+integrated support for `abi-compliance-checker` into the build system.
+
 ### [Representations and Design Boundaries with Endianness](_posts/2023-06-19-representations-and-design-boundaries-with-endianness.md)
 
 The nuts and bolts of endianness are a bit fiddly. Keeping value endianness in
