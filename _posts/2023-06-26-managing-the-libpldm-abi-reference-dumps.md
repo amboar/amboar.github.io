@@ -66,19 +66,29 @@ reference dump for the build.
 
 A corollary of this is that the reference dumps can be updated by copying a
 build's `current.dump` into the appropriate location under the `abi/` directory.
-Needless to say, the build's host architecture (again, with respect to [^1]) and
-compiler suite need to be taken into account. If you are unsure, these details
-are summarised in the output of `meson setup ...`:
+However, before you copy that file, several details must be checked:
+
+1. That the build is configured to expose only the deprecated and stable ABI[^0]
+2. That the build's host architecture (again, with respect to [^1]) is
+   appropriate for the dump type, and
+3. That the compiler suite is appropriate for the dump type.
+
+[^0]: i.e. `meson setup -Dabi=deprecated,stable ...`
+
+If you are unsure, these details are summarised in the `meson` output:
 
 ```
-$ meson setup build
+$ meson setup -Dabi=deprecated,stable builds/aarch64/stable
 ...
 C compiler for the host machine: ccache cc (gcc 13.1.1 "cc (GCC) 13.1.1 20230614 (Red Hat 13.1.1-4)")
-C linker for the host machine: cc ld.mold 1.11.0
+...
 C++ compiler for the host machine: ccache c++ (gcc 13.1.1 "c++ (GCC) 13.1.1 20230614 (Red Hat 13.1.1-4)")
-C++ linker for the host machine: c++ ld.mold 1.11.0
+...
 Host machine cpu family: aarch64
 Host machine cpu: aarch64
+...
+  User defined options
+    abi        : deprecated,stable
 ...
 ```
 
@@ -99,7 +109,7 @@ configurations separate[^2]:
       [cross-architecture work on Fedora][amboar-fedora-multiarch]
 
 ```
-$ meson setup --cross-file=... builds/${arch}/${compiler}
+$ meson setup -Dabi=deprecated,stable --cross-file=... builds/${arch}/${compiler}
 $ meson compile -C builds/${arch}/${compiler}
 ```
 
