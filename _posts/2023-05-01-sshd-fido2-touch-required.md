@@ -13,7 +13,7 @@ to it. Because I'm lazy the network contains printers and other devices whose
 firmware hygiene generally causes infosec side-eye. Leaving `sshd` exposed to
 password-based authentication attempts didn't evoke feelings of comfort.
 
-[workflow]: notes/2023/03/27/openbmc-development-on-an-m1-ultra.md
+[workflow]: /notes/2023/03/27/openbmc-development-on-an-m1-ultra.html
 
 Given it's generally hard for printers to press buttons on machines across the
 room I figured a better approach was for `sshd` to require demonstration of

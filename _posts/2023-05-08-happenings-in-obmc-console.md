@@ -64,7 +64,7 @@ In a recent post I outlined how we can [synthetically test the functionality of
 about that here, other than to mention [the patches are still in
 review][obmc-console-pty].
 
-[amboar-obmc-console-testing]: notes/2023/05/02/testing-obmc-console-with-socat.md
+[amboar-obmc-console-testing]: /notes/2023/05/02/testing-obmc-console-with-socat.html
 [obmc-console-pty]: https://gerrit.openbmc.org/q/topic:pty
 
 ## A new set of requirements
@@ -106,7 +106,7 @@ connect to the console over DBus was provided.
 
 [obmc-console-dbus-baud]: https://gerrit.openbmc.org/c/openbmc/obmc-console/+/16619
 
-[amboar-obmc-console-service-units]: notes/2023/03/31/exploiting-obmc-console-service-units-for-multiple-host-consoles.md
+[amboar-obmc-console-service-units]: /notes/2023/03/31/exploiting-obmc-console-service-units-for-multiple-host-consoles.html
 [dropbear]: https://matt.ucc.asn.au/dropbear/dropbear.html
 
 ## Trouble: Broken consoles

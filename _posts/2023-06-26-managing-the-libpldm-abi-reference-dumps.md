@@ -13,7 +13,7 @@ to exist in the library but remain out of reach for general use until we're
 confident that their API is reasonable.
 
 [libpldm]: https://github.com/openbmc/libpldm
-[amboar-libpldm-abi-control]: _posts/2023-06-06-deprecated-stable-and-testing-abis-for-libpldm.md
+[amboar-libpldm-abi-control]: /notes/2023/06/06/deprecated-stable-and-testing-abis-for-libpldm.html
 [mike-hearn-writing-shared-libraries]: https://plan99.net/~mike/writing-shared-libraries.html#backwards-compat
 
 The existence of the `stable` visibility class implies that we shouldn't break
@@ -103,7 +103,7 @@ naming scheme such as `builds/${arch}/${compiler}` to keep your build
 configurations separate[^2]:
 
 [debian-wiki-multiarch]: https://wiki.debian.org/Multiarch/HOWTO
-[amboar-fedora-multiarch]: _posts/2023-06-15-cross-architecture-userspace-workflow-on-fedora-38.md
+[amboar-fedora-multiarch]: _posts/2023-06-15-cross-architecture-userspace-workflow-on-fedora-38.html
 
 [^2]: Again, for a short intro to meson's cross-files see my post covering
       [cross-architecture work on Fedora][amboar-fedora-multiarch]
