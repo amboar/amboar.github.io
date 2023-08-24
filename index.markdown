@@ -110,9 +110,9 @@ through libmctp, but this rapidly hit limitations at the kernel/userspace
 interface boundary. To fix that, Code Construct did the work to move MCTP into
 the kernel.
 
-### [OpenBMC development on a Apple M1 Ultra](_posts/2023-03-27-openbmc-development-on-an-m1-ultra.md)
+### [OpenBMC development on a Apple M1 MacBook Pro](_posts/2023-03-27-openbmc-development-on-an-m1-ultra.md)
 
-I've had an M1 Ultra lying beside me for some time now, waiting for me to
+I've had an M1 MacBook Pro lying beside me for some time now, waiting for me to
 find a good workflow and migrate onto it.
 
 ### [An `opkg`-based OpenBMC development workflow](_posts/2022-05-13-opkg-based-development-workflow.md)

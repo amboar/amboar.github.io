@@ -1,5 +1,5 @@
 ---
-title: OpenBMC Development on an Apple M1 Ultra
+title: OpenBMC Development on an Apple M1 MacBook Pro
 author: Andrew
 ---
 
