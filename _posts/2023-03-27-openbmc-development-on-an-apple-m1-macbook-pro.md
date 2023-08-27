@@ -1,10 +1,11 @@
 ---
 title: OpenBMC Development on an Apple M1 MacBook Pro
 author: Andrew
+redirect_from: /notes/2023/03/27/openbmc-development-on-an-m1-ultra.html
 ---
 
-I've had an M1 Ultra lying beside me for some time now, waiting for me to
-find a good workflow and migrate onto it.
+I've had an M1 MacBook Pro Max lying beside me for some time now, waiting for me
+to find a good workflow and migrate onto it.
 
 As it turns out, sandbagging on migrating for 6 months or so turned out to be a
 bit of a blessing. The software ecosystem evolved quite a bit from when I first
