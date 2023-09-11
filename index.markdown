@@ -1,5 +1,11 @@
 ## Notes
 
+### [Disabling the Lenovo P14s Touchscreen](_posts/2023-09-11-disable-lenovo-p14s-touchscreen.md)
+
+New job, new laptop, and I no longer an M1 MacBook Pro. This time around I
+have a Lenovo P14s, which unfortunately comes with a touchscreen. Touchscreens
+are terrible, so let's disable it.
+
 ### [Managing the `libpldm` ABI Reference Dumps](_posts/2023-06-26-managing-the-libpldm-abi-reference-dumps.md)
 
 The existence of `libpldm`'s `stable` visibility class implies that we shouldn't
