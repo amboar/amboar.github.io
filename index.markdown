@@ -1,5 +1,14 @@
 ## Notes
 
+### [Unstable GCC on Debian Stable](_posts/2023-09-12-unstable-gcc-on-debian-stable.md)
+
+Bookworm ships with GCC-12, which is unfortunate, because OpenBMC userspace
+needs to be compiled with GCC-13. So we're back in the familiar territory of
+needing a different compiler. The Debian testing (trixie) and unstable (sid)
+suites ship GCC-13, but using the usual method of package pinning still results
+in `apt` wanting to upgrade most of my system. Let's look at a different
+approach.
+
 ### [Disabling the Lenovo P14s Touchscreen](_posts/2023-09-11-disable-lenovo-p14s-touchscreen.md)
 
 New job, new laptop, and I no longer an M1 MacBook Pro. This time around I
